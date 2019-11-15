@@ -1,4 +1,4 @@
-# react-dux
+# react-duce
 
 English | [简体中文](./README-zh_CN.md)
 
@@ -18,7 +18,7 @@ A very simple global state management lib for React that uses  React's useState 
 ## <a name="installation">Installation</a>
 You can install the lib through NPM.
 
-`npm install --save react-dux`
+`npm install --save react-duce`
 
 ## <a name="usage">Usage</a>
 ### <a name="usage_basic">Basic</a>
@@ -28,7 +28,7 @@ The first argument is state. second argument is mutative. you can use a reducer 
 
 ```jsx
 import React from 'react';
-import { createStore, useStore } from 'react-dux';
+import { createStore, useStore } from 'react-duce';
 
 // create a global store
 createStore('countStore', 0);
@@ -58,7 +58,7 @@ By the way, store can be referenced by using instance that is returned by the cr
 
 ```jsx
 import React from 'react';
-import { createStore, useStore } from 'react-dux';
+import { createStore, useStore } from 'react-duce';
 
 const countStore = createStore('countStore', 0);
 createStore('nameStore', 'Walker Lee');
@@ -87,11 +87,11 @@ const HelloContent = () => {
 ```
 
 ### <a name="usage_reducer">Stores with reducer</a>
-Do you like redux? here you go, `react-dux` can delegate the state management to reducers.
+Do you like redux? here you go, `react-duce` can delegate the state management to reducers.
 
 ```javascript
 import React from 'react';
-import { createStore, useStore } from 'react-dux';
+import { createStore, useStore } from 'react-duce';
 
 const todoStore = createStore(
   'todoStore',
@@ -163,7 +163,7 @@ The name for your global store.
 #### state
 Initial state for store.
 #### reducer
-You can use reducer to manage your application state, if you not given it, `react-dux` will give a default reducer to handle state change, the default reducer function like this: `(state, payload) => payload`
+You can use reducer to manage your application state, if you not given it, `react-duce` will give a default reducer to handle state change, the default reducer function like this: `(state, payload) => payload`
 
 ### <a>`useStore(identifier:string|Store):[state, setState|dispatch]`</a>
 A function returns a array, the first element is __state__, seconed element is change state function.

@@ -1,8 +1,8 @@
 {
-  "name": "react-dux",
+  "name": "react-duce",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/react-dux.min.js",
+  "main": "dist/react-duce.min.js",
   "scripts": {
     "build": "webpack --progress",
     "test": "jest"

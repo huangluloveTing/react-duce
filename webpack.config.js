@@ -11,7 +11,7 @@ module.exports = {
   entry: './lib/index.js',
   output: {
     path: COMMON_PATH.DIST,
-    filename: 'react-dux.min.js',
+    filename: 'react-duce.min.js',
   },
   module: {
     rules: [

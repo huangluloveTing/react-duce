@@ -1,4 +1,4 @@
-# react-dux
+# react-duce
 
 [English](./README.md) | 简体中文
 
@@ -18,7 +18,7 @@
 ## <a name="installation">安装</a>
 使用npm进行安装.
 
-`npm install --save react-dux`
+`npm install --save react-duce`
 
 ## <a name="usage">使用</a>
 ### <a name="usage_basic">基础</a>
@@ -29,7 +29,7 @@
 
 ```jsx
 import React from 'react';
-import { createStore, useStore } from 'react-dux';
+import { createStore, useStore } from 'react-duce';
 
 // create a global store
 createStore('countStore', 0);
@@ -59,7 +59,7 @@ HelloContent组件中的span元素被点击时，count会增加1，并且这个�
 
 ```jsx
 import React from 'react';
-import { createStore, useStore } from 'react-dux';
+import { createStore, useStore } from 'react-duce';
 
 const countStore = createStore('countStore', 0);
 createStore('nameStore', 'Walker Lee');
@@ -88,11 +88,11 @@ const HelloContent = () => {
 ```
 
 ### <a name="usage_reducer">为store加入reducer</a>
-你习惯使用redux吗？那么请看，这个reducer方法类似于redux的处理, 此时我们就将状态的管理交给了`react-dux`，预先定义的reducer.
+你习惯使用redux吗？那么请看，这个reducer方法类似于redux的处理, 此时我们就将状态的管理交给了`react-duce`，预先定义的reducer.
 
 ```jsx
 import React from 'react';
-import { createStore, useStore } from 'react-dux';
+import { createStore, useStore } from 'react-duce';
 
 const todoStore = createStore(
   'todoStore',
@@ -164,7 +164,7 @@ store的名字
 #### state
 创建store的初始化state
 #### reducer
-你可以使用reducer去管理应用中的state，如果在创建store的时候你没有传入reducer，`react-dux` 会一个默认的reducer函数，换句话说，setState其实是dispatch的一个语法糖，setState是不用传递形如{type: 'add'}参数，这个函数是这样：`(state, payload) => payload`。
+你可以使用reducer去管理应用中的state，如果在创建store的时候你没有传入reducer，`react-duce` 会一个默认的reducer函数，换句话说，setState其实是dispatch的一个语法糖，setState是不用传递形如{type: 'add'}参数，这个函数是这样：`(state, payload) => payload`。
 
 ### <a>`useStore(identifier:string|Store):[state, setState|dispatch]`</a>
 该方法调用后，返回一个数组，数组的第一个元素为 __state__，第二个元素为状态处理函数。
