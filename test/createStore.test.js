@@ -9,8 +9,6 @@ describe('test createStore', () => {
     
     const Button = () => {
       const [value, setValue] = useStore('value')
-      setValue(1)
-      console.log(value)
       return (
         <div id="btn" onClick={() => setValue(value + 1)}>
           {value}
@@ -23,7 +21,7 @@ describe('test createStore', () => {
   })
 
   it('test dispatch with reducer', () => {
-    expect(createStore('count', {
+    const countStore = createStore('count', {
       idCount: 0,
       todos: [{ id: 0, text: 'buy milk' }]
     }, (state, action) => {
@@ -43,6 +41,19 @@ describe('test createStore', () => {
         default:
           return state;
       }
-    })).not.toBeNull()
+    })
+    expect(countStore).not.toBeNull()
+
+    const Button = () => {
+      const [count, dispatch] = useStore('count')
+      return (
+        <div id="btn" onClick={() => dispatch({type: 'add'})}>
+          {count}
+        </div>
+      );
+    }
+
+    // const button = shallow(<Button />)
+    // expect(button.find('#btn').text()).toEqual("0")
   })
 })
